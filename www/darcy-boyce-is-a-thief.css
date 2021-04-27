@@ -1,7 +1,33 @@
+:root {
+    --main-bg-color: #232323;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    color: #f1f1f1;
+    font-family: 'Montserrat', sans-serif;
+}
+
 .fraud-alert {
+    display: flex;
+    align-items: center;
     width: 100%;
     height: 200px;
-    background-image: url('images/fraud-alert.jpeg');
+    background-image: url('images/fraud-alert.jpg');
     background-position: center center;
     background-size: cover;
+}
+
+.fraud-alert img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid var(--main-bg-color);
+    margin-left: 32px;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.card {
+    color: #232323;
 }
