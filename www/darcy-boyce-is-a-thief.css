@@ -31,3 +31,20 @@ body {
 .card {
     color: #232323;
 }
+
+.text-columns {
+    column-count: 1;
+    column-gap: 0;
+}
+
+@media screen and (min-width: 1200px) {
+    .text-columns {
+        column-count: 2;
+        column-gap: 40px;
+    }
+}
+
+.main-content h3 {
+    padding-top: 32px;
+    padding-bottom: 16px;
+}
