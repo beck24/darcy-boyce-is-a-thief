@@ -65,3 +65,19 @@ body {
     background: rgb(255,255,255);
     background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 56%, rgba(0,0,0,0) 95%, rgba(0,0,0,0) 100%);
 }
+
+a {
+    color: #fcfcfc;
+}
+
+.modal .carousel-item img {
+    max-height: 70vh;
+}
+
+.modal {
+    color: var(--main-bg-color);
+}
+
+.modal .carousel-item {
+    background-color: var(--main-bg-color);
+}
