@@ -81,3 +81,7 @@ a {
 .modal .carousel-item {
     background-color: var(--main-bg-color);
 }
+
+.figure-caption {
+    color: #bfc4c9;
+}
