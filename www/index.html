@@ -142,7 +142,24 @@
                     </div>
                 </div>
                 <div class="col-md-4 order-1 order-md-2">
-                    <div class="card">
+                    <div class="card p-3">
+                      <div style="display: flex; align-items: baseline; justify-content: center;">
+                        <div id="days" class="fw-bold text-danger font-monospace" style="font-size: 3rem">0</div>
+                        <div class="ps-2 fw-bold">Days</div>
+                      </div>
+
+                      <div  class="fs-1 fw-bold font-monospace" style="display: flex; align-items: baseline; justify-content: center">
+                        <div id="hours">0</div>
+                        <div>:</div>
+                        <div id="minutes">0</div>
+                        <div>:</div>
+                        <div id="seconds">0</div>
+                      </div>
+
+                      Since Darcy promised to return our deposit.
+                    </div>
+
+                    <div class="card mt-3">
                         <div class="card-header">
                           TL;DR This asshole stole $6600
                         </div>
@@ -214,5 +231,44 @@
         </div>
         <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script>
+      const daysElem = document.getElementById('days');
+      const hoursElem = document.getElementById('hours');
+      const minutesElem = document.getElementById('minutes');
+      const secondsElem = document.getElementById('seconds');
+
+      const timeSince = () => {
+        const nowUTC = Date.now();
+        const thenUTC = Date.UTC(2021, 3, 15, 2, 31);
+
+        let diff = nowUTC - thenUTC;
+
+        const msperDay = 1000 * 60 * 60 * 24;
+        const msperHr = 1000 * 60 * 60;
+        const msperMin = 1000 * 60;
+        const msperSec = 1000;
+
+        const days = Math.floor(diff/msperDay);
+
+        diff = diff - (days * msperDay);
+
+        const hours = Math.floor(diff/msperHr);
+
+        diff = diff - (hours * msperHr);
+
+        const minutes = Math.floor(diff/msperMin);
+
+        diff = diff - (minutes * msperMin);
+
+        const seconds = Math.floor(diff/msperSec);
+
+        daysElem.innerText = days;
+        hoursElem.innerText = hours < 10 ? `0${hours}` : hours;
+        minutesElem.innerText = minutes < 10 ? `0${minutes}` : minutes;
+        secondsElem.innerText = seconds < 10 ? `0${seconds}` : seconds;
+      }
+
+      setInterval(timeSince, 1000);
+    </script>
     </body>
 </html>
